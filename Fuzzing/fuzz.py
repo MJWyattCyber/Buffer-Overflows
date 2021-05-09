@@ -20,6 +20,3 @@ while True:
 	except:
 		print "Fuzzing crashed at %s bytes" % str(len(buffer))
 		sys.exit()
-
-	finally:
-		s.close()
