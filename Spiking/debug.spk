@@ -1,3 +1,3 @@
 s_readline();
-s_string("TRUN ");
+s_string("##COMMAND NAME GOES HERE##");
 s_string_variable("0");
