@@ -3,8 +3,8 @@ import sys, socket
 from time import sleep
 
 buffer = "A" * 100
-address = '192.168.10.162'
-port = 9999
+address = '127.0.0.1' ##CHANGE THIS
+port = 9999 ##CHANGE THIS
 
 
 while True:
