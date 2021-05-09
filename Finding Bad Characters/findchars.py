@@ -24,6 +24,3 @@ try:
 except:
 	print "Error connecting to server"
 	sys.exit()
-
-finally:
-	s.close()
